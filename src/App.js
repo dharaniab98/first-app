@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react'
+import StudentInfo from "./components/StudentInfo";
+import NewStudent from "./components/NewStudent";
+
 
 function App() {
+  const [student, setStudent] = useState({fullName:"dharani", education:"btech", percentage:78})
+  const studentDataHandler = (studentInfo) => {
+  console.log("app.js")
+  console.log(student)
+  setStudent(studentInfo)
+}
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <NewStudent onStudentHandler={studentDataHandler}/>
+      <StudentInfo fullName={student.fullName} education={student.education} percentage={student.percentage}/> 
+     
     </div>
   );
 }
