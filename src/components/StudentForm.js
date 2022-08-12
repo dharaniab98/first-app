@@ -36,6 +36,7 @@ function StudentForm(props){
 	const onSubmitHandler = (event) =>{
        event.preventDefault()
 	   props.onStudentSaveHandler({
+		id:Math.random().toString(),
 		fullName:enteredInput.enteredName,
 		education:enteredInput.enteredEducation,
 		percentage:enteredInput.enteredPercentage

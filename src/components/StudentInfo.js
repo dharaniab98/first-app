@@ -11,7 +11,7 @@ function StudentInfo(props){
 	// 	setCount((prevState) => prevState - 1)
 	// }
 	return(
-		<div>
+		<div className='student-item'>
 			<div> 
 				<label>First Name</label>
 				<h1> 
